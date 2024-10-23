@@ -4,7 +4,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
 
   const handleChange = (e) => {
@@ -14,49 +14,46 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Mensagem enviada por: ${formData.name}`);
-    // Aqui você pode adicionar lógica para enviar os dados para um servidor
+    alert(`Mensagem enviada: ${formData.message}`);
     setFormData({ name: '', email: '', message: '' }); // Limpa o formulário
   };
 
   return (
-    <div>
-      <h2>Contato</h2>
+    <div className="container">
+      <h1>Entre em Contato</h1>
+      <p>Se você é um fã de BioShock ou tem perguntas, sinta-se à vontade para entrar em contato conosco!</p>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>
-            Nome:
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </label>
+          <label htmlFor="name">Nome:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div>
-          <label>
-            Email:
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </label>
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div>
-          <label>
-            Mensagem:
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
-          </label>
+          <label htmlFor="message">Mensagem:</label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
         </div>
         <button type="submit">Enviar</button>
       </form>

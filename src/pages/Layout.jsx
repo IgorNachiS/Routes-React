@@ -4,7 +4,8 @@ const Layout = () => {
   return (
     <div>
       <header>
-        <h1>Meu Site</h1>
+      <h1>BioShock: Explorando as Profundezas e os Céus</h1>
+      <p>Uma jornada pelos mundos de Rapture e Columbia</p>
       </header>
       <nav>
         <Link to="/">Home</Link>
@@ -12,10 +13,10 @@ const Layout = () => {
         <Link to="/contact">Contact</Link>
       </nav>
       <div className="container">
-        <Outlet /> {/* Renderiza as páginas filhas aqui */}
+        <Outlet /> 
       </div>
       <footer>
-        <p>© 2024 Meu Site. Todos os direitos reservados.</p>
+        <p>There is always a lighthouse, there's always a man, there's always a city.</p>
       </footer>
     </div>
   );
